@@ -1,0 +1,44 @@
+<div class="container">
+  <head>
+    <title>Movie Apps</title>
+    <%- include('partials/bootstrap') %>
+</head>
+<%- include('partials/navbar') %>
+
+  <div class="row">
+    <a class="btn btn-primary" href="/items/add">Add item</a>
+  </div>
+  <br/>
+  <div class="row">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr> 
+          <th class="text-center">Id</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Type</th>
+          <th class="text-center">Price</th>
+          <th class="text-center">Color</th>
+          <th class="text-center">Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% items.forEach((item) => { %>
+          <tr>
+            <td class="text-right"><%= item.id %></td>
+            <td class="text-left"><%= item.name %></td>
+            <td class="text-left"><%= item.type %></td>
+            <td class="text-left"><%= item.price %></td>
+            <td class="text-center"><%= item.color %></td>
+            <td class="text-center"><%= item.availability %></td>
+            <td class="text-center">
+              <a href=<%=`/items/${item.id}/edit`%>>Edit</a>
+              |
+              <a href=<%=`/items/${item.id}/delete`%>>Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>  
+  </div>
+</div>
+

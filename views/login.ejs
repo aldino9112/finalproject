@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Ecommerce</title>
+    <%- include('partials/bootstrap') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <h1>Login</h1>
+
+        <form action="/login" method="post">
+
+        <p>Email</p>
+        <input type="text" name="email" placeholder=" e.g : user20 " >
+
+        <p>Password</p>
+        <input type="text" name="password" >
+
+        <br><br>
+        <button type="submit">Confirm</button>
+    </form>
+    <a href="/register"> Register </a>
+
+    
+</body>
+</html>

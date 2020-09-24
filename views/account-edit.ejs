@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Ecommerce</title>
+    <%- include('partials/bootstrap') %>
+</head>
+<body>
+    
+    <%- include('partials/navbar') %>
+    <h1>Edit Profile</h1>
+
+    <form action="/home/<%= data.id %>/profile/edit" method="post">
+        <p>First Name</p>
+        <input type="text" name="first_name" value="<%= data.first_name %>"  >
+        <p>Last Name</p>
+        <input type="text" name="last_name" value="<%= data.last_name %>"  >
+        <p>Email</p>
+        <input type="text" name="email" value="<%= data.email %>"  >
+        <p>Phone Number</p>
+        <input type="text" name="no_telephone" value="<%= data.no_telephone %>"  >
+
+
+        
+        <br><br>
+        <button type="submit">Confirm</button>
+    </form>
+    <form action="/profile"> <input type="submit" value="Back" /> </form>
+
+</body>
+</html>

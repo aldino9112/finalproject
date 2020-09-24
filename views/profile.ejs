@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Ecommerce</title>
+    <%- include('partials/bootstrap') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <h1>Profile</h1>
+
+    <h2>Name</h2>
+    <p> <%= data.fullname() %> </p>
+    <h2>Email</h2>
+    <p> <%= data.email %> </p>
+    <h2>Phone Number</h2>
+    <p> <%= data.no_telephone %> </p> 
+
+    <a href="/home/<%= data.id %>/profile/edit"> edit profile </a>
+
+</body>
+</html>

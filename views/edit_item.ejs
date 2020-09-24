@@ -1,0 +1,50 @@
+<%- include('partials/header.ejs', { title: 'Edit Item' }) %>
+
+<% if (error) { %>
+  <%- include('partials/error.ejs', { error }) %>
+<% } %>
+
+<div class="container">
+  <div class="row">
+    <a class="" href="/items">Show All Data</a>
+  </div>
+  <br/>
+  <div class="row">
+    <form action=<%= `/items/${item.id}/edit` %> method="POST" class="form">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="name" id="ame" placeholder="Input name" value=<%= item.name %>>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="type" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="type" id="type" placeholder="Input type" value=<%= item.type %>>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="price" id="price" placeholder="Input price" value=<%= item.price %>>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="color" class="col-sm-2 col-form-label">Color</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="color" id="color" placeholder="Input color" value=<%= item.color %>>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="availability" class="col-sm-2 col-form-label">Availability</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="availability" id="availability" placeholder="Input availability" value=<%= item.availability %>>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Edit Student</button>
+    </form>
+  </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %> 
