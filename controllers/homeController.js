@@ -60,7 +60,7 @@ class HomeController {
 
     static loginForm (req, res) {
         if (req.session.AccountId) {
-            res.redirect('/item')
+            res.redirect('/items')
         } else {
             res.render('./login.ejs')
         }
@@ -88,7 +88,7 @@ class HomeController {
 
     static logout (req, res) {
         delete req.session.AccountId
-        res.redirect('/')
+        res.redirect('/login')
     }
 
 }
