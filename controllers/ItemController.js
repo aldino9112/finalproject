@@ -1,11 +1,12 @@
 const { Item } = require("../models")
+const nominal = require("../helpers/helper")
 
 class ItemController {
 
         static getItem(req, res) {    
           Item.findAll()
           .then(items => {
-            res.render("item", { items })
+            res.render("item", { items , nominal })
           })
           .catch(err => {
             res.send(err)
