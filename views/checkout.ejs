@@ -1,0 +1,25 @@
+<html>
+    <p1>Pembelian atas nama <%= data.fullname() %> </p1>
+    <body>
+      <table class="table">
+          <thead>
+        <tr>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Quantity</td>
+      </tr>
+  </thead>
+     <tbody>
+      <% data.Items.forEach((transaction) => { %>
+      <tr>
+            <td><%= transaction.name %></td>
+            <td><%= transaction.price %></td>
+            <td><%= transaction.Transaction.quantity %></td>
+          </tr>
+          <% }) %>
+      </tbody>
+      </table>
+      <a href="/logout">exit</a>
+  
+    </body>
+</html>

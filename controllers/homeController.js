@@ -96,8 +96,8 @@ class HomeController {
         Account.findByPk(id, {
             include: Item
         })
-        .then(data => res.send(data))
-            // res.render('see', { data, countAge } )})
+        // .then(data=> res.send(data))
+        .then(data => res.render('checkout', { data }))
         .catch(err => err)
     }
 
