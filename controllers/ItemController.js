@@ -1,4 +1,4 @@
-const { Item } = require("../models")
+const { Item, Account, Transaction } = require("../models")
 const nominal = require("../helpers/helper")
 
 class ItemController {
@@ -89,6 +89,28 @@ class ItemController {
               res.send(err)
             });
         }
+
+        static buyForm(req, res) {
+          const id = req.params.id
+          res.render('buyform' , { id })
+      }
+  
+      static buy(req,res) {
+          const ItemId = req.params.id
+          Transaction.create ({
+              AccountId: req.session.AccountId,
+              ItemId: ItemId,
+              quantity: req.body.quantity,
+              createdAt: new Date(),
+              updatedAt: new Date()
+          })
+          .then (success => {
+              res.redirect('/items')
+          })
+          .catch (err => {
+              res.send(err.message)
+          })
+      }
       }
       
       

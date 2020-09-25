@@ -91,6 +91,16 @@ class HomeController {
         res.redirect('/login')
     }
 
+    static checkout(req, res) {
+        const id = req.session.AccountId
+        Account.findByPk(id, {
+            include: Item
+        })
+        .then(data => res.send(data))
+            // res.render('see', { data, countAge } )})
+        .catch(err => err)
+    }
+
 }
 
 module.exports = HomeController

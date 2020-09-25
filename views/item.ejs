@@ -31,14 +31,18 @@
             <td class="text-center"><%= item.color %></td>
             <td class="text-center"><%= item.availability %></td>
             <td class="text-center">
-              <a href=<%=`/items/${item.id}/edit`%>>Edit</a>
+              <a href=<%=`/items/${item.id}/edit`%>>Edit</a> 
               |
               <a href=<%=`/items/${item.id}/delete`%>>Delete</a>
+              |
+              <a href=<%=`/items/${item.id}/Buy`%>>Buy</a>
             </td>
           </tr>
         <% }) %>
       </tbody>
     </table>  
+    <a href=<%=`/checkout`%>>Checkout</a>
+
   </div>
 </div>
 

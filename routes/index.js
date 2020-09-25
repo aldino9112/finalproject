@@ -16,6 +16,8 @@ router.get('/home/:id/profile/', HomeController.profile)
 router.get('/home/:id/profile/edit', HomeController.editForm)
 router.post('/home/:id/profile/edit', HomeController.edit)
 router.get('/logout', HomeController.logout)
+router.get('/checkout', HomeController.checkout)
+
 
 
 
