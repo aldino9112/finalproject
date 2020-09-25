@@ -4,9 +4,10 @@ const nominal = require("../helpers/helper")
 class ItemController {
 
         static getItem(req, res) {    
+          const data = req.session.AccountId
           Item.findAll()
           .then(items => {
-            res.render("item", { items , nominal })
+            res.render("item", { items , nominal , data})
           })
           .catch(err => {
             res.send(err)
